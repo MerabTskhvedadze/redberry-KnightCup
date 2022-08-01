@@ -1,0 +1,27 @@
+@import "../../assets/styles/global.module.css";
+
+.mainDiv {
+  display: flex;
+}
+
+.leftDiv {
+  background-color: var(--blue-1);
+  width: 50%;
+  height: 1080px;
+}
+
+.leftDiv h1 {
+  font-family: "Nunito";
+  font-weight: 900;
+  font-size: 30px;
+
+  margin-left: 82.93px;
+
+  color: var(--white);
+}
+
+.rightDiv {
+  background-color: var(--red-1);
+  width: 50%;
+  height: 1080px;
+}
