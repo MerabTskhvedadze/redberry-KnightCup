@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
-*{
+* {
   box-sizing: border-box;
   text-decoration: none;
   margin: 0;
@@ -9,7 +9,14 @@
 }
 
 :root {
-  --blue-1: #7025FB;
-  --red-1: #FD5334;
+  --blue-1: #7025fb;
+
+  --red-1: #fd5334;
+
   --white: #ffffff;
+
+  --black-1: #212529;
+
+  --purple-rgba-1: rgba(194, 165, 249, 0.8);
+  --green-rgba-1: rgba(219, 219, 219, 0.3);
 }

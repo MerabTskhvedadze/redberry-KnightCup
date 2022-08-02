@@ -4,24 +4,71 @@
   display: flex;
 }
 
+/****** Left content ******/
 .leftDiv {
   background-color: var(--blue-1);
   width: 50%;
   height: 1080px;
 }
 
-.leftDiv h1 {
+.headerDiv {
+  height: 84px;
+  display: flex;
+  align-items: center;
+}
+
+.headerDiv h1 {
   font-family: "Nunito";
   font-weight: 900;
   font-size: 30px;
 
-  margin-left: 82.93px;
-
   color: var(--white);
 }
 
+.headerDiv img {
+  margin-left: 60px;
+  margin-right: 8.27px;
+}
+
+.img1 {
+  width: 100%;
+  height: 66%;
+}
+
+/****** Right content ******/
 .rightDiv {
   background-color: var(--red-1);
   width: 50%;
   height: 1080px;
+}
+
+.rightDiv h1 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 109px;
+  text-transform: uppercase;
+
+  color: var(--white);
+
+  margin-top: 235px;
+  margin-left: 80px;
+  margin-bottom: 102px;
+}
+
+.rightDiv span {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  text-transform: uppercase;
+
+  color: var(--black-1);
+}
+
+/****** button ******/
+.getStartedBtn {
+  margin-left: 80px;
 }
