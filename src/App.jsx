@@ -1,8 +1,14 @@
-import { GetStarted } from "./view/getStarted";
+import React from "react";
+
+import { Routes, Route } from "react-router-dom";
+import { Landing, Information } from "./view";
 
 function App() {
   return (
-    <GetStarted />
+    <Routes>
+      <Route path={"/"} element={<Landing />} />
+      <Route path={"/information"} element={<Information />} />
+    </Routes>
   );
 }
 
