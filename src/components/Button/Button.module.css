@@ -26,11 +26,11 @@
 }
 
 .primaryText {
-  color: var(--white);
+  color: var(--white-1);
 }
 
 .primaryIcon {
-  color: var(--white);
+  color: var(--white-1);
 }
 
 .primary:hover {
@@ -38,7 +38,7 @@
 }
 
 .secondary {
-  background-color: var(--white);
+  background-color: var(--white-1);
   border: 1px solid var(--black-1);
   transition: all 0.2s ease-in-out;
 }

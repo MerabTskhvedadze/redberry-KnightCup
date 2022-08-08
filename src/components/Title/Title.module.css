@@ -1,0 +1,24 @@
+@import "../../assets/styles/global.module.css";
+
+.titleDiv {
+  height: 84px;
+  border: 1px solid var(--green-rgba-2);
+}
+
+.title {
+  position: relative;
+  width: 215px;
+  height: 24px;
+  left: 48px;
+  top: 30px;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  text-transform: capitalize;
+
+  color: var(--black-1);
+}
