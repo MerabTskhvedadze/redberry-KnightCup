@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 import { LeftContent, Stepper, Title } from "../../components";
-import { Inputs } from "./Inputs";
+// import { Inputs } from "./Inputs";
 
 import classes from "./Information.module.css";
 import informatinImg from "../../assets/images/personalInfoImg.png";
