@@ -2,7 +2,7 @@
 
 .stepper {
   position: relative;
-  left: 107px;
+  left: 95px;
   top: 45px;
 }
 
@@ -16,12 +16,15 @@
   height: 40px;
   padding-top: 8px;
 
-  border: 1px solid var(--green-1);
+  border: 1px solid var(--white-4);
   border-radius: 8px;
 
   font-family: "Open Sans";
   font-weight: 700;
   text-align: center;
+
+  color: var(--black-1);
+  background: var(--white-4);
 }
 
 .midLine {
@@ -50,9 +53,12 @@
   height: 40px;
   padding-top: 8px;
 
-  border: 1px solid var(--green-1);
+  background: var(--white-1);
+
+  border: 1px solid var(--white-2);
   border-radius: 8px;
 
+  color: var(--black-1);
   text-align: center;
   font-family: "Open Sans";
   font-weight: 700;
@@ -60,7 +66,7 @@
 
 .stepperTitles {
   position: relative;
-  left: 60px;
+  left: 48px;
   top: 49px;
 
   display: flex;

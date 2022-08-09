@@ -52,4 +52,8 @@
   height: 1080px;
 }
 
-
+.inputs {
+  position: relative;
+  left: 48px;
+  top: 117px;
+}

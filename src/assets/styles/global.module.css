@@ -19,12 +19,15 @@
   --white-1: #ffffff;
   --white-2: #e5e6e8;
   --white-3: #f5f5f5;
+  --white-4: #e9faf1;
+  --white-5: #E9ECEF;
 
   --black-1: #212529;
+
+  --black-rgba-1: rgba(33, 37, 41, 0.5);
 
   --purple-rgba-1: rgba(194, 165, 249, 0.8);
 
   --green-rgba-1: rgba(219, 219, 219, 0.3);
-
   --green-rgba-2: rgba(185, 180, 196, 0.3);
 }

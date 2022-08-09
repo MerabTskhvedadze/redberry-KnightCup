@@ -1,0 +1,24 @@
+.headers {
+  position: relative;
+  top: 80px;
+  left: 48px;
+}
+
+.title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 150%;
+}
+
+.subTitle {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: capitalize;
+
+  color: var(--green-2);
+}

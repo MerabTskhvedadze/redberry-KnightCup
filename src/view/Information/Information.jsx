@@ -1,16 +1,17 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
-import { LeftContent, Stepper, Title } from "../../components";
-// import { Inputs } from "./Inputs";
+import {
+  LeftContent,
+  Stepper,
+  PageTitle,
+  InputsTitle,
+  Input,
+} from "../../components";
 
 import classes from "./Information.module.css";
 import informatinImg from "../../assets/images/personalInfoImg.png";
 
 export function Information() {
-  const location = useLocation();
-  const currentPage = location.pathname;
-
   return (
     <div className={classes.mainDiv}>
       <LeftContent>
@@ -21,9 +22,18 @@ export function Information() {
         <p className={classes.secondParag}>-Emanuel Lasker</p>
       </LeftContent>
       <div className={classes.rightDiv}>
-        <Title>Start creating your account</Title>
-        <Stepper currentPage={currentPage} succsess={false} />
-        {/****** here should go input header and inputs ******/}
+        <PageTitle>Start creating your account</PageTitle>
+        <Stepper succsess={false} />
+        <InputsTitle
+          title={"Personal information"}
+          subTitle={"This is basic informaton fields"}
+        />
+        <div className={classes.inputs}>
+          <Input placeholder='Name *' />
+          <Input placeholder='Email address *' />
+          <Input placeholder='Phone number *' />
+          <Input placeholder='Date of birth *' />
+        </div>
       </div>
     </div>
   );

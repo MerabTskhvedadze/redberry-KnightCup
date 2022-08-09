@@ -1,10 +1,13 @@
-// import cn from "classnames";
+import { useLocation } from "react-router-dom";
 
+// import cn from "classnames";
 import classes from "./Stepper.module.css";
 
 import stepperSuccsess from "../../assets/images/stepperSuccsess.svg";
 
-export function Stepper({ currentPage, succsess }) {
+export function Stepper({ succsess }) {
+  const location = useLocation();
+  const currentPage = location.pathname;
   const checkPage = currentPage === "/information";
 
   return (

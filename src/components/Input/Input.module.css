@@ -1,0 +1,47 @@
+@import "../../assets/styles/global.module.css";
+
+.inputDiv {
+  display: flex;
+  align-items: center;
+
+  width: 650px;
+  height: 40px;
+  margin-bottom: 40px;
+
+  border-bottom: 1px solid var(--green-rgba-2);
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+}
+
+.inputDiv:focus-within {
+  background-color: var(--white-5);
+}
+
+
+input {
+  background: transparent;
+  border: none;
+  width: 96%;
+  height: 100%;
+  padding-left: 10px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 20px;
+}
+
+input:hover::placeholder {
+  color: var(--black-rgba-1);
+}
+
+input::placeholder {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  padding-top: 6px;
+  color: var(--black-1);
+}
+
+input:focus {
+  outline: none;
+}
