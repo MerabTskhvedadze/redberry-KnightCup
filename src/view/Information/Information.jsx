@@ -1,4 +1,6 @@
 import React from "react";
+// import validator from "validator";
+import { useLocalStorage } from "usehooks-ts";
 
 import {
   LeftContent,
@@ -7,15 +9,32 @@ import {
   InputsTitle,
   Input,
 } from "../../components";
+import { Buttons } from "./Buttons";
 
 import classes from "./Information.module.css";
 import informatinImg from "../../assets/images/personalInfoImg.png";
+import { DateInput } from "./DateInput";
 
 export function Information() {
+  const [userInputs, setUserInputs] = useLocalStorage("userInformation", {
+    userName: "",
+    email: "",
+    phoneNum: "",
+    dateInput: "",
+  });
+
+  const nameHandler = (e) =>
+    setUserInputs({ ...userInputs, userName: e.target.value });
+  const emailHandler = (e) =>
+    setUserInputs({ ...userInputs, email: e.target.value });
+  const phoneNumHandler = (e) =>
+    setUserInputs({ ...userInputs, phoneNum: e.target.value });
+  const dateHandler = (e) =>
+    setUserInputs({ ...userInputs, dateInput: e.target.value });
+
   return (
     <div className={classes.mainDiv}>
-      <LeftContent>
-        <img className={classes.img1} src={informatinImg} alt="chess" />
+      <LeftContent imgScr={informatinImg}>
         <p className={classes.firstParag}>
           “When you see a good move, look for a better one.”
         </p>
@@ -23,17 +42,40 @@ export function Information() {
       </LeftContent>
       <div className={classes.rightDiv}>
         <PageTitle>Start creating your account</PageTitle>
-        <Stepper succsess={false} />
+        <Stepper succsess={true} />
         <InputsTitle
           title={"Personal information"}
           subTitle={"This is basic informaton fields"}
         />
         <div className={classes.inputs}>
-          <Input placeholder='Name *' />
-          <Input placeholder='Email address *' />
-          <Input placeholder='Phone number *' />
-          <Input placeholder='Date of birth *' />
+          <Input
+            type="text"
+            placeholder="Name *"
+            value={userInputs.userName}
+            onChange={nameHandler}
+            succsess={true}
+          />
+          <Input
+            type="text"
+            placeholder="Email address *"
+            value={userInputs.email}
+            onChange={emailHandler}
+            succsess={false}
+          />
+          <Input
+            type="number"
+            placeholder="Phone number *"
+            value={userInputs.phoneNum}
+            onChange={phoneNumHandler}
+            succsess={true}
+          />
+          <DateInput
+            placeholderText="Date of birth"
+            selected={Date.parse(userInputs.dateInput)}
+            onChange={dateHandler}
+          />
         </div>
+        <Buttons succsess={false} />
       </div>
     </div>
   );

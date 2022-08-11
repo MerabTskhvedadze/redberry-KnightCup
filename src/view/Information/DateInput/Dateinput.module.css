@@ -1,0 +1,28 @@
+@import '../../../assets/styles/global.module.css';
+
+.dateDiv {
+  width: 650px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+
+  border-bottom: 1px solid var(--green-rgba-2);
+  border-radius: 4px;
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+}
+
+.dateDiv img {
+  position: absolute;
+  left: 620px;
+  z-index: 0;
+}
+
+.dateDiv:focus-within {
+  background-color: var(--white-5);
+}
+
+.popper {
+  z-index: 2!important;
+}

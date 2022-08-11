@@ -1,6 +1,8 @@
+@import '../../assets/styles/global.module.css';
+
 .headers {
   position: relative;
-  top: 80px;
+  top: 75px;
   left: 48px;
 }
 

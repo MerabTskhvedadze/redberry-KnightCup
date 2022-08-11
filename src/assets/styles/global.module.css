@@ -30,4 +30,7 @@
 
   --green-rgba-1: rgba(219, 219, 219, 0.3);
   --green-rgba-2: rgba(185, 180, 196, 0.3);
+
+  --red-rgba-1: rgba(220, 53, 69, 1);
+  --red-rgba-2: rgba(220, 53, 70, 0.116);
 }

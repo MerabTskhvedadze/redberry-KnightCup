@@ -9,9 +9,7 @@ import landingPhoto from "../../assets/images/landingPhoto.png";
 export function Landing() {
   return (
     <div className={classes.mainDiv}>
-      <LeftContent>
-        <img className={classes.img1} src={landingPhoto} alt="chess" />
-      </LeftContent>
+      <LeftContent imgScr={landingPhoto} />
       <div className={classes.rightDiv}>
         <h1>
           chess says <span>a lot about</span> who we are

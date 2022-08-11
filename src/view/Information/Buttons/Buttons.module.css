@@ -1,0 +1,19 @@
+.btnDiv {
+  position: relative;
+  top: 150px;
+  left: 48px;
+
+  display: flex;
+  width: 650px;
+  height: 65px;
+  padding: 5px;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn2 {
+  position: absolute;
+  left: 79%;
+  top: 5px;
+}

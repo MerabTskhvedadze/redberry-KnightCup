@@ -1,47 +1,79 @@
 @import "../../assets/styles/global.module.css";
 
-.inputDiv {
-  display: flex;
-  align-items: center;
+input {
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
 
+  border: none;
+  background: transparent;
+  z-index: 2;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Open Sans";
+}
+
+input:focus {
+  outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.inputDiv {
   width: 650px;
   height: 40px;
+
+  display: flex;
+  align-items: center;
   margin-bottom: 40px;
 
   border-bottom: 1px solid var(--green-rgba-2);
-  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
   border-radius: 4px;
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+}
+
+.inputDiv img {
+  position: absolute;
+  left: 620px;
+  z-index: 0;
 }
 
 .inputDiv:focus-within {
   background-color: var(--white-5);
 }
 
-
-input {
-  background: transparent;
-  border: none;
-  width: 96%;
-  height: 100%;
-  padding-left: 10px;
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 20px;
+.inputDivError {
+  background: var(--red-rgba-2);
 }
 
-input:hover::placeholder {
-  color: var(--black-rgba-1);
+.inputDivError:focus-within {
+  background-color: var(--red-rgba-2);
 }
 
-input::placeholder {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  padding-top: 6px;
+.Input::placeholder {
   color: var(--black-1);
 }
 
-input:focus {
-  outline: none;
+.Input:hover::placeholder {
+  color: var(--black-rgba-1);
+}
+
+.inputError {
+  color: var(--red-rgba-1);
+}
+
+.inputError::placeholder {
+  color: var(--red-rgba-1);
 }
