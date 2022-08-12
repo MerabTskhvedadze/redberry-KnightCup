@@ -1,5 +1,5 @@
 import React from "react";
-import validator from "validator";
+// import validator from "validator";
 import { useLocalStorage } from "usehooks-ts";
 
 import {
@@ -23,13 +23,13 @@ export function Information() {
     dateInput: "",
   });
 
-  const nameIsValid = userInputs.userName.length >= 3;
-  const emailIsValid =
-    validator.isEmail(userInputs.email) &&
-    userInputs.email.includes("@redberry.ge");
-  const phoneNumIsValid =
-    validator.isNumeric(userInputs.phoneNum) && (userInputs.phoneNum).length === 9;
-  const dateInputIsValid = userInputs.dateInput.trim() !== '';
+  // const nameIsValid = userInputs.userName.length >= 3;
+  // const emailIsValid =
+  //   validator.isEmail(userInputs.email) &&
+  //   userInputs.email.includes("@redberry.ge");
+  // const phoneNumIsValid =
+  //   validator.isNumeric(userInputs.phoneNum) && (userInputs.phoneNum).length === 9;
+  // const dateInputIsValid = userInputs.dateInput.trim() !== '';
 
   const nameHandler = (e) =>
     setUserInputs({ ...userInputs, userName: e.target.value });
