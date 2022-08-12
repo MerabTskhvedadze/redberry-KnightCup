@@ -9,11 +9,11 @@ export function DateInput({ succsess, inputIsValid, ...props }) {
   return (
     <div
       className={
-        succsess ? classes.dateDiv : cn(classes.dateDiv, classes.dateDivError)
+        inputIsValid ? classes.dateDiv : cn(classes.dateDiv, classes.dateDivError)
       }
     >
       <DatePicker
-        className={succsess ? classes.datePicker : classes.datePickerError}
+        className={inputIsValid ? classes.datePicker : classes.datePickerError}
         popperClassName={classes.popper}
         popperPlacement="top-end"
         portalId="root-portal"
@@ -23,7 +23,7 @@ export function DateInput({ succsess, inputIsValid, ...props }) {
         dateFormat="dd/MM/yyyy"
         {...props}
       />
-      {inputIsValid && <img src={inputSuccsess} alt="arrow" />}
+      {succsess && <img src={inputSuccsess} alt="arrow" />}
     </div>
   );
 }

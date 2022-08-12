@@ -7,16 +7,16 @@ export function Input({ succsess, inputIsValid, ...props }) {
   return (
     <div
       className={
-        succsess
+        inputIsValid
           ? classes.inputDiv
           : cn(classes.inputDiv, classes.inputDivError)
       }
     >
       <input
-        className={succsess ? classes.Input : classes.inputError}
+        className={inputIsValid ? classes.Input : classes.inputError}
         {...props}
       />
-      {inputIsValid && (
+      {succsess && (
         <img src={inputSuccsess} alt="succsess" width="20px" height="20px" />
       )}
     </div>
