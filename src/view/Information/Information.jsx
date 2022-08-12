@@ -1,5 +1,5 @@
 import React from "react";
-// import validator from "validator";
+import validator from "validator";
 import { useLocalStorage } from "usehooks-ts";
 
 import {
@@ -23,14 +23,21 @@ export function Information() {
     dateInput: "",
   });
 
+  const nameIsValid = userInputs.userName.length >= 3;
+  const emailIsValid =
+    validator.isEmail(userInputs.email) &&
+    userInputs.email.includes("@redberry.ge");
+  const phoneNumIsValid =
+    validator.isNumeric(userInputs.phoneNum) && (userInputs.phoneNum).length === 9;
+  const dateInputIsValid = userInputs.dateInput.trim() !== '';
+
   const nameHandler = (e) =>
     setUserInputs({ ...userInputs, userName: e.target.value });
   const emailHandler = (e) =>
     setUserInputs({ ...userInputs, email: e.target.value });
   const phoneNumHandler = (e) =>
     setUserInputs({ ...userInputs, phoneNum: e.target.value });
-  const dateHandler = (e) =>
-    setUserInputs({ ...userInputs, dateInput: e.target.value });
+  const dateHandler = (e) => setUserInputs({ ...userInputs, dateInput: e });
 
   return (
     <div className={classes.mainDiv}>
@@ -54,13 +61,15 @@ export function Information() {
             value={userInputs.userName}
             onChange={nameHandler}
             succsess={true}
+            inputIsValid={false}
           />
           <Input
             type="text"
             placeholder="Email address *"
             value={userInputs.email}
             onChange={emailHandler}
-            succsess={false}
+            succsess={true}
+            inputIsValid={false}
           />
           <Input
             type="number"
@@ -68,11 +77,14 @@ export function Information() {
             value={userInputs.phoneNum}
             onChange={phoneNumHandler}
             succsess={true}
+            inputIsValid={false}
           />
           <DateInput
             placeholderText="Date of birth"
             selected={Date.parse(userInputs.dateInput)}
             onChange={dateHandler}
+            succsess={true}
+            inputIsValid={false}
           />
         </div>
         <Buttons succsess={false} />

@@ -3,21 +3,27 @@ import "react-datepicker/dist/react-datepicker.css";
 import classes from "./Dateinput.module.css";
 
 import inputSuccsess from "../../../assets/images/inputSuccsess.svg";
+import cn from "classnames";
 
-export function DateInput({ succsess, ...props }) {
+export function DateInput({ succsess, inputIsValid, ...props }) {
   return (
-    <div className={classes.dateDiv}>
+    <div
+      className={
+        succsess ? classes.dateDiv : cn(classes.dateDiv, classes.dateDivError)
+      }
+    >
       <DatePicker
-        portalId="root-portal"
+        className={succsess ? classes.datePicker : classes.datePickerError}
         popperClassName={classes.popper}
         popperPlacement="top-end"
-        showYearDropdown
-        showMonthDropdown
+        portalId="root-portal"
         dropdownMode="select"
-        className={classes.datePicker}
+        showMonthDropdown
+        showYearDropdown
+        dateFormat="dd/MM/yyyy"
         {...props}
       />
-      {succsess && <img src={inputSuccsess} alt="arrow" />}
+      {inputIsValid && <img src={inputSuccsess} alt="arrow" />}
     </div>
   );
 }

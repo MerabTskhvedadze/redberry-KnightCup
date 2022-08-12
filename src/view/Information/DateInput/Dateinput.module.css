@@ -1,4 +1,4 @@
-@import '../../../assets/styles/global.module.css';
+@import "../../../assets/styles/global.module.css";
 
 .dateDiv {
   width: 650px;
@@ -23,6 +23,47 @@
   background-color: var(--white-5);
 }
 
-.popper {
-  z-index: 2!important;
+.dateDivError {
+  background: var(--red-rgba-2);
 }
+
+.dateDivError:focus-within {
+  background-color: var(--red-rgba-2);
+}
+
+.popper {
+  z-index: 2 !important;
+}
+
+.datePicker {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  padding-left: 10px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Open Sans";
+}
+
+.datePicker::placeholder {
+  color: var(--black-1);
+}
+
+.datePicker:hover::placeholder {
+  color: var(--black-rgba-1);
+}
+
+.datePickerError {
+  color: var(--red-rgba-1);
+}
+
+.datePickerError::placeholder {
+  color: var(--red-rgba-1);
+}
+
