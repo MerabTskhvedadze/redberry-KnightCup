@@ -1,0 +1,12 @@
+@import '../../assets/styles/global.module.css';
+
+.mainDiv {
+  display: flex;
+}
+
+/****** Right side ******/
+.rightDiv {
+  background-color: var(--white-1);
+  width: 50%;
+  height: 1080px;
+}

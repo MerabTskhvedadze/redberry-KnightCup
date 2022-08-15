@@ -1,3 +1,4 @@
+export { Loadind } from "./Loading/Loading";
 export { Button } from "./Button";
 export { LeftContent } from './LeftContent'
 export { PageTitle } from './PageTitle'

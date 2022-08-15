@@ -18,7 +18,7 @@ import informatinImg from "../../assets/images/personalInfoImg.png";
 
 export function Information() {
   const [error, setError] = useState(false);
-  
+
   const [userInputs, setUserInputs] = useLocalStorage("userInformation", {
     userName: "",
     email: "",
