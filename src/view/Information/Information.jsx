@@ -76,7 +76,7 @@ export function Information() {
       <div className={classes.rightDiv}>
         <PageTitle>Start creating your account</PageTitle>
         <Stepper succsess={formSucceed} />
-        <ErrorModal header={'invalid email address'} message={'please enter valid email address'} />
+        {false && <ErrorModal header={'invalid email address'} message={'please enter valid email address'} />}
         <InputsTitle
           title={"Personal information"}
           subTitle={"This is basic informaton fields"}
