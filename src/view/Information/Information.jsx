@@ -11,6 +11,7 @@ import {
 } from "../../components";
 import { Buttons } from "./Buttons";
 import { DateInput } from "./DateInput";
+import { ErrorModal } from "./ErrorModal";
 
 import classes from "./Information.module.css";
 import informatinImg from "../../assets/images/personalInfoImg.png";
@@ -40,7 +41,13 @@ export function Information() {
   const numIsValid =
     validator.isNumeric(userInputs.phoneNum) &&
     userInputs.phoneNum.length === 9;
-  const dateInputIsValid = userInputs.dateInput !== null ? true : false ;
+
+  let dateInputIsValid = false;
+  if (userInputs.dateInput === null || userInputs.dateInput === "") {
+    dateInputIsValid = false;
+  } else {
+    dateInputIsValid = true;
+  }
 
   const nameHasError = !nameIsValid && nameIsTouched;
   const emailHasError = !emailIsValid && emailIsTouched;
@@ -69,6 +76,7 @@ export function Information() {
       <div className={classes.rightDiv}>
         <PageTitle>Start creating your account</PageTitle>
         <Stepper succsess={formSucceed} />
+        <ErrorModal header={'invalid email address'} message={'please enter valid email address'} />
         <InputsTitle
           title={"Personal information"}
           subTitle={"This is basic informaton fields"}

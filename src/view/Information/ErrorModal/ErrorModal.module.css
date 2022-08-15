@@ -1,0 +1,16 @@
+@import "../../../assets/styles/global.module.css";
+
+.mainDiv {
+  position: absolute;
+  left: 1225px;
+  top: 155px;
+
+  background-color: var(--white-2);
+}
+
+.errorHeader {
+  display: flex;
+  align-items: center;
+}
+
+.errorMessage {}
