@@ -4,13 +4,13 @@ import { Button } from "../../../components";
 import classes from "./Buttons.module.css";
 import btnVector from "../../../assets/images/btnVector.svg";
 
-export function Buttons({ succsess }) {
+export function Buttons({ succsess ,onValidCheck}) {
   return (
     <div className={classes.btnDiv}>
       <Link to="/">
         <Button mode="secondary">Back</Button>
       </Link>
-      <Link to={succsess ? '/experience' : "" } >
+      <Link onClick={onValidCheck} to={succsess ? '/experience' : "" } >
         <Button
           className={classes.btn2}
           mode="primary"

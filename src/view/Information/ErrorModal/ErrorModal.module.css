@@ -5,12 +5,57 @@
   left: 1225px;
   top: 155px;
 
-  background-color: var(--white-2);
+  width: 300px;
+  height: 87px;
+
+  box-shadow: 0px 8px 16px var(--black-rgba-3);
+  border-radius: 4px;
+  border: 1px solid var(--black-rgba-2);
+  background: var(--white-rgba-1);
 }
 
 .errorHeader {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+
+  height: 40px;
+  padding-top: 5px;
+
+  border-bottom: 1px solid var(--white-5);
 }
 
-.errorMessage {}
+.errorMain {
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: var(--red-1);
+}
+
+.errorMain img {
+  margin-right: 8px;
+}
+
+.turnOffBtn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  padding-right: 14px;
+}
+
+.errorMessage {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  padding: 9px 12px 12px 12px;
+}

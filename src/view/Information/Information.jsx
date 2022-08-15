@@ -17,6 +17,8 @@ import classes from "./Information.module.css";
 import informatinImg from "../../assets/images/personalInfoImg.png";
 
 export function Information() {
+  const [error, setError] = useState(false);
+  
   const [userInputs, setUserInputs] = useLocalStorage("userInformation", {
     userName: "",
     email: "",
@@ -65,6 +67,32 @@ export function Information() {
   const formSucceed =
     nameIsValid && emailIsValid && numIsValid && dateInputIsValid;
 
+  const checkValidation = () => {
+    if (!nameIsValid) {
+      setError({
+        header: "Invalid name",
+        message: "Please enter valid name",
+      });
+    } else if (!emailIsValid) {
+      setError({
+        header: "Invalid email",
+        message: "Please enter valid email address",
+      });
+    } else if (!numIsValid) {
+      setError({
+        header: "Invalid number",
+        message: "Please enter valid phone number",
+      });
+    } else if (!dateInputIsValid) {
+      setError({
+        header: "Invalid date",
+        message: "Please enter valid date of birth",
+      });
+    }
+  };
+
+  const turnOffError = () => setError(null);
+
   return (
     <div className={classes.mainDiv}>
       <LeftContent imgScr={informatinImg}>
@@ -76,7 +104,13 @@ export function Information() {
       <div className={classes.rightDiv}>
         <PageTitle>Start creating your account</PageTitle>
         <Stepper succsess={formSucceed} />
-        {false && <ErrorModal header={'invalid email address'} message={'please enter valid email address'} />}
+        {error && (
+          <ErrorModal
+            turnOffFunc={turnOffError}
+            header={error.header}
+            message={error.message}
+          />
+        )}
         <InputsTitle
           title={"Personal information"}
           subTitle={"This is basic informaton fields"}
@@ -118,7 +152,7 @@ export function Information() {
             succsess={dateInputIsValid}
           />
         </div>
-        <Buttons succsess={formSucceed} />
+        <Buttons onValidCheck={checkValidation} succsess={formSucceed} />
       </div>
     </div>
   );
