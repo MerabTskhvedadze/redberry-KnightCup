@@ -31,19 +31,14 @@ export function Information() {
   const [numIsTouched, setPhoneIsTouched] = useState(false);
   const [dateInputIsTouched, setDateInputIsTouched] = useState(false);
 
-  const nameBlur = () => setNameIsTouched(true);
-  const emailBlur = () => setEmailIsTouched(true);
-  const numBlur = () => setPhoneIsTouched(true);
-  const dateInputBlur = () => setDateInputIsTouched(true);
-
   const nameIsValid = userInputs.userName.length >= 3;
   const emailIsValid =
     validator.isEmail(userInputs.email) &&
-    userInputs.email.includes("@redberry.ge");
+    userInputs.email.includes("@redberry.ge") &&
+    (userInputs.email.lastIndexOf("g") === userInputs.email.length - 2);
   const numIsValid =
     validator.isNumeric(userInputs.phoneNum) &&
     userInputs.phoneNum.length === 9;
-
   let dateInputIsValid = false;
   if (userInputs.dateInput === null || userInputs.dateInput === "") {
     dateInputIsValid = false;
@@ -51,39 +46,67 @@ export function Information() {
     dateInputIsValid = true;
   }
 
-  const nameHasError = !nameIsValid && nameIsTouched;
-  const emailHasError = !emailIsValid && emailIsTouched;
-  const numHasError = !numIsValid && numIsTouched;
-  const dateInputHasError = !dateInputIsValid && dateInputIsTouched;
-
-  const nameHandler = (e) =>
-    setUserInputs({ ...userInputs, userName: e.target.value });
-  const emailHandler = (e) =>
-    setUserInputs({ ...userInputs, email: e.target.value });
-  const phoneNumHandler = (e) =>
-    setUserInputs({ ...userInputs, phoneNum: e.target.value });
-  const dateHandler = (e) => setUserInputs({ ...userInputs, dateInput: e });
+  const [nameHasError, setNameHasError] = useState(
+    !nameIsValid && nameIsTouched
+  );
+  const [emailHasError, setEmailHasError] = useState(
+    !emailIsValid && emailIsTouched
+  );
+  const [numHasError, setNumHasError] = useState(!numIsValid && numIsTouched);
+  const [dateInputHasError, setDateInputHasError] = useState(
+    !dateInputIsValid && dateInputIsTouched
+  );
 
   const formSucceed =
     nameIsValid && emailIsValid && numIsValid && dateInputIsValid;
 
+  const nameHandler = (e) => {
+    setError(null);
+    setNameHasError(false);
+    setUserInputs({ ...userInputs, userName: e.target.value });
+  };
+  const emailHandler = (e) => {
+    setError(null);
+    setEmailHasError(false);
+    setUserInputs({ ...userInputs, email: e.target.value });
+  };
+  const phoneNumHandler = (e) => {
+    setError(null);
+    setNumHasError(false);
+    setUserInputs({ ...userInputs, phoneNum: e.target.value });
+  };
+  const dateHandler = (e) => {
+    setError(null);
+    setDateInputHasError(false);
+    setUserInputs({ ...userInputs, dateInput: e });
+  };
+
+  const nameBlur = () => setNameIsTouched(true);
+  const emailBlur = () => setEmailIsTouched(true);
+  const numBlur = () => setPhoneIsTouched(true);
+  const dateInputBlur = () => setDateInputIsTouched(true);
+
   const checkValidation = () => {
     if (!nameIsValid) {
+      setNameHasError(true);
       setError({
         header: "Invalid name",
         message: "Please enter valid name",
       });
     } else if (!emailIsValid) {
+      setEmailHasError(true);
       setError({
         header: "Invalid email",
         message: "Please enter valid email address",
       });
     } else if (!numIsValid) {
+      setNumHasError(true);
       setError({
         header: "Invalid number",
         message: "Please enter valid phone number",
       });
     } else if (!dateInputIsValid) {
+      setDateInputHasError(true);
       setError({
         header: "Invalid date",
         message: "Please enter valid date of birth",
