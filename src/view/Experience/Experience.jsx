@@ -1,10 +1,15 @@
+import { useState } from "react";
 import { InputsTitle, LeftContent, PageTitle, Stepper } from "../../components";
 
 import classes from "./Experience.module.css";
 
 import experienceImg from "../../assets/images/experienceMain.png";
+import { Buttons } from "./Buttons";
+import { Dropdown } from "./Dropdown";
 
 export function Experience() {
+  const [selected, setSelected] = useState("level of knowledge *");
+
   return (
     <div className={classes.mainDiv}>
       <LeftContent imgScr={experienceImg}>
@@ -21,8 +26,12 @@ export function Experience() {
           title={"Chess experience"}
           subTitle={"This is basic informaton fields"}
         />
-        {/* <div className={classes.dropDowns}>here go dropdowns</div> */}
-        {/* here shoul go buttons */}
+        <div className={classes.form}>
+          <div className={classes.dropdowns}>
+            <Dropdown selected={selected} setSelected={setSelected} />
+          </div>
+          <Buttons />
+        </div>
       </div>
     </div>
   );

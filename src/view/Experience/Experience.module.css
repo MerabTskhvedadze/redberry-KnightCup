@@ -1,4 +1,4 @@
-@import '../../assets/styles/global.module.css';
+@import "../../assets/styles/global.module.css";
 
 .mainDiv {
   display: flex;
@@ -9,4 +9,11 @@
   background-color: var(--white-1);
   width: 50%;
   height: 1080px;
+}
+
+.form {
+  position: relative;
+  top: 150px;
+  left: 48px;
+  height: 430px;
 }
