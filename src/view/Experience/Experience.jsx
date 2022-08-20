@@ -8,7 +8,10 @@ import { Buttons } from "./Buttons";
 import { Dropdown } from "./Dropdown";
 
 export function Experience() {
-  const [selected, setSelected] = useState("level of knowledge *");
+  const [selected, setSelected] = useState("Level of knowledge *");
+  const [selectedRmt, setSelectedRmt] = useState('Choose person *')
+
+  const options = ["Beginner", "Intermediate", "Professional"];
 
   return (
     <div className={classes.mainDiv}>
@@ -28,7 +31,8 @@ export function Experience() {
         />
         <div className={classes.form}>
           <div className={classes.dropdowns}>
-            <Dropdown selected={selected} setSelected={setSelected} />
+            <Dropdown options={options} selected={selected} setSelected={setSelected} />
+            <Dropdown mode={'remote'} options={options} selected={selectedRmt} setSelected={setSelectedRmt}/>
           </div>
           <Buttons />
         </div>

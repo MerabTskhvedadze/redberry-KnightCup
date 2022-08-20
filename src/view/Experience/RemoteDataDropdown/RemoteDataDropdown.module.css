@@ -1,6 +1,7 @@
 @import "../../../assets/styles/global.module.css";
 
 .dropdown {
+  position: relative;
   width: 300px;
   height: 46px;
 
@@ -12,16 +13,11 @@
   user-select: none;
 }
 
-.remoteDropdown{
-  width: 350px;
-  height: 46;
-}
-
 .dropdownBtn {
   display: flex;
   justify-content: space-between;
 
-  position: relative;
+  position: absolute;
   width: 260px;
   left: 16px;
   top: 5px;
@@ -37,16 +33,13 @@
   cursor: pointer;
 }
 
-.remoteBtn{
-  width: 310px;
-}
-
 .dropdownContent {
   box-sizing: border-box;
 
   position: absolute;
   width: 300px;
   height: 155px;
+  left: 0px;
   top: 50px;
 
   background: #ffffff;
@@ -55,11 +48,6 @@
   border-radius: 4px;
 
   z-index: 999;
-}
-
-.remoteContent{
-  height: 320px;
-  width: 350px;
 }
 
 .dropdownItem {

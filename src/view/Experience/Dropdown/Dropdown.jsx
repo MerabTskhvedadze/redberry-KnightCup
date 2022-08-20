@@ -1,22 +1,41 @@
 import { useState } from "react";
+
+import cn from "classnames";
 import classes from "./Dropdown.module.css";
 
-import icon from '../../../assets/images/dropdownIcon.svg'
+import icon from "../../../assets/images/dropdownIcon.svg";
 
-export function Dropdown({ selected, setSelected }) {
+export function Dropdown({ mode, options, selected, setSelected }) {
   const [isActive, setIsActive] = useState(false);
   const onActiveDropdown = () => setIsActive((prevState) => !prevState);
 
-  const options = ["Beginner", "Intermediate", "Professional"];
-
   return (
-    <div className={classes.dropdown}>
-      <div className={classes.dropdownBtn} onClick={onActiveDropdown}>
+    <div
+      className={
+        mode === "remote"
+          ? cn(classes.dropdown, classes.remoteDropdown)
+          : classes.dropdown
+      }
+    >
+      <div
+        className={
+          mode === "remote"
+            ? cn(classes.remoteBtn, classes.dropdownBtn)
+            : classes.dropdownBtn
+        }
+        onClick={onActiveDropdown}
+      >
         {selected}
-        <img className={isActive && classes.vector} src={icon} alt='vector' />
+        <img className={isActive && classes.vector} src={icon} alt="vector" />
       </div>
       {isActive && (
-        <div className={classes.dropdownContent}>
+        <div
+          className={
+            mode === "remote"
+              ? cn(classes.dropdownContent, classes.remoteContent)
+              : classes.dropdownContent
+          }
+        >
           {options.map((options) => (
             <div
               className={classes.dropdownItem}
