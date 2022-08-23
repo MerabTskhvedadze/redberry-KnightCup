@@ -1,0 +1,1 @@
+export { Completed as default } from './Completed'

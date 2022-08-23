@@ -5,26 +5,24 @@ import classes from "./Dropdown.module.css";
 
 import icon from "../../../assets/images/dropdownIcon.svg";
 
-export function Dropdown({ mode, options, selected, setSelected }) {
+export function Dropdown({
+  mode,
+  options,
+  remoteData,
+  error,
+  selected,
+  setSelected,
+  prevState,
+}) {
   const [isActive, setIsActive] = useState(false);
   const onActiveDropdown = () => setIsActive((prevState) => !prevState);
 
+  let uniqueKey1 = 0;
+  let uniqueKey2 = 0;
+
   return (
-    <div
-      className={
-        mode === "remote"
-          ? cn(classes.dropdown, classes.remoteDropdown)
-          : classes.dropdown
-      }
-    >
-      <div
-        className={
-          mode === "remote"
-            ? cn(classes.remoteBtn, classes.dropdownBtn)
-            : classes.dropdownBtn
-        }
-        onClick={onActiveDropdown}
-      >
+    <div className={classes.dropdown}>
+      <div className={classes.dropdownBtn} onClick={onActiveDropdown}>
         {selected}
         <img className={isActive && classes.vector} src={icon} alt="vector" />
       </div>
@@ -36,17 +34,37 @@ export function Dropdown({ mode, options, selected, setSelected }) {
               : classes.dropdownContent
           }
         >
-          {options.map((options) => (
-            <div
-              className={classes.dropdownItem}
-              onClick={(e) => {
-                setSelected(e.target.textContent);
-                setIsActive(false);
-              }}
-            >
-              {options}
-            </div>
-          ))}
+          {mode !== "remote"
+            ? options.map((options) => (
+                <div
+                  key={uniqueKey1++}
+                  className={classes.dropdownItem}
+                  onClick={(e) => {
+                    setSelected({
+                      ...prevState,
+                      knowledgeLevel: e.target.textContent,
+                    });
+                    setIsActive(false);
+                  }}
+                >
+                  {options}
+                </div>
+              ))
+            : error === null ? remoteData.map(({ name }) => (
+                <div
+                  key={uniqueKey2++}
+                  className={cn(classes.dropdownItem, classes.remoteItem)}
+                  onClick={(e) => {
+                    setSelected({
+                      ...prevState,
+                      character: e.target.textContent,
+                    });
+                    setIsActive(false);
+                  }}
+                >
+                  {name}
+                </div>
+              )) : <div className={classes.error} >{error}</div>}
         </div>
       )}
     </div>

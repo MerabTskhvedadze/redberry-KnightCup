@@ -16,9 +16,8 @@ import { ErrorModal } from "./ErrorModal";
 import classes from "./Information.module.css";
 import informatinImg from "../../assets/images/personalInfoImg.png";
 
-export function Information() {
+export function Information({ func }) {
   const [error, setError] = useState(false);
-
   const [userInputs, setUserInputs] = useLocalStorage("userInformation", {
     userName: "",
     email: "",
@@ -31,11 +30,11 @@ export function Information() {
   const [numIsTouched, setPhoneIsTouched] = useState(false);
   const [dateInputIsTouched, setDateInputIsTouched] = useState(false);
 
-  const nameIsValid = userInputs.userName.length >= 3;
+  const nameIsValid = userInputs.userName.length >= 2;
   const emailIsValid =
     validator.isEmail(userInputs.email) &&
     userInputs.email.includes("@redberry.ge") &&
-    (userInputs.email.lastIndexOf("g") === userInputs.email.length - 2);
+    userInputs.email.lastIndexOf("g") === userInputs.email.length - 2;
   const numIsValid =
     validator.isNumeric(userInputs.phoneNum) &&
     userInputs.phoneNum.length === 9;
@@ -175,7 +174,7 @@ export function Information() {
             succsess={dateInputIsValid}
           />
         </div>
-        <Buttons onValidCheck={checkValidation} succsess={formSucceed} />
+        <Buttons onClick={checkValidation} succsess={formSucceed} />
       </div>
     </div>
   );

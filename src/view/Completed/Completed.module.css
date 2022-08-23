@@ -1,0 +1,14 @@
+@import "../../assets/styles/global.module.css";
+
+.mainDiv {
+  display: flex;
+}
+
+.rocket {
+  position: relative;
+  
+  padding-top: 18.5% ;
+  padding-left: 13%;
+
+  background: #ffffff;
+}

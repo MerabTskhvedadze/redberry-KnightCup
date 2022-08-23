@@ -23,3 +23,72 @@
   display: flex;
   justify-content: space-between;
 }
+
+.radioHeader {
+  margin-top: 40px;
+  margin-bottom: 18px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.radioBtn {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 110px;
+}
+
+.radioBtn div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.radioBtn input {
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+}
+
+.radioBtn label {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+}
+
+.firstP {
+  position: absolute;
+  width: 616px;
+  left: 117px;
+  top: 261px;
+
+  font-family: "Nunito";
+  font-style: italic;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 35px;
+  text-transform: uppercase;
+
+  color: #212529;
+}
+
+.secondP {
+  position: absolute;
+  width: 266px;
+  height: 33px;
+  left: 466px;
+  top: 376px;
+
+  font-family: "Nunito";
+  font-style: italic;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+  text-transform: uppercase;
+
+  color: #093f68;
+}

@@ -12,7 +12,7 @@
   user-select: none;
 }
 
-.remoteDropdown{
+.remoteDropdown {
   width: 350px;
   height: 46;
 }
@@ -37,7 +37,7 @@
   cursor: pointer;
 }
 
-.remoteBtn{
+.remoteBtn {
   width: 310px;
 }
 
@@ -57,9 +57,8 @@
   z-index: 999;
 }
 
-.remoteContent{
-  height: 320px;
-  width: 350px;
+.remoteContent {
+  height: 316px;
 }
 
 .dropdownItem {
@@ -83,6 +82,22 @@
   background: #f7f7f9;
 }
 
+.remoteItem {
+  padding-top: 20px;
+  height: 72px;
+}
+
 .vector {
   transform: rotate(180deg);
+}
+
+.error {
+  margin-top: 35%;
+  text-align: center;
+  color: var(--red-rgba-1);
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
 }
