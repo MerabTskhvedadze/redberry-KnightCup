@@ -12,7 +12,7 @@ export function Completed() {
     const timer = setTimeout(() => {
       window.location.replace("/");
       localStorage.clear()
-    }, 880);
+    }, 1300);
     return () => clearTimeout(timer);
   }, []);
 
