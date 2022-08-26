@@ -46,12 +46,10 @@ export function Experience() {
     getData();
   }, []);
 
-  const userInformation = useReadLocalStorage("userInformation");
-  const userExperienceData = useReadLocalStorage("userExperience");
-  const userData = [
-    { userInformation: userInformation },
-    { userExperience: userExperienceData },
-  ];
+  const userData = {
+    userInformation: useReadLocalStorage("userInformation"),
+    userExperience: useReadLocalStorage("userExperience"),
+  };
   const sendData = () => {
     fetch(
       "https://login-register-http-default-rtdb.firebaseio.com/register.json",
@@ -60,7 +58,7 @@ export function Experience() {
         body: JSON.stringify({
           User: userData,
           Headers: {
-            "Content-type": "aplication/json",
+            "chess tournament": "redberry knight cup",
           },
         }),
       }
